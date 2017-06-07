@@ -1,1 +1,2 @@
-### This is a simple application built for the sole purpose of practicing layouts and constraints
+### This is a simple application built for the sole purpose of practicing layouts, contraints, picler protocols and actions
+
