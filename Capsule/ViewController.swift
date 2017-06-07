@@ -12,14 +12,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
     @IBOutlet var statePicker: UIPickerView!
     @IBOutlet var statePickerBtn: UIButton!
+    @IBOutlet var countryLabel: UILabel!
+    @IBOutlet var countryInput: UITextField!
+    @IBOutlet var buynowBtn: UIButton!
     
     let states = ["Delhi", "West Bengal", "Assam", "Punjab", "Haryana", "Jharkhand"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        statePicker.dataSource = self
-        statePicker.delegate = self
+        statePicker.dataSource = self //**** Must add when using UIpickerview
+        statePicker.delegate = self //**** Must add when using UIpickerview
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +32,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
     @IBAction func stateBtnPressed(_ sender: Any) {
         statePicker.isHidden = false
+        countryInput.isHidden = true
+        countryLabel.isHidden = true
+        
+    }
+    @IBAction func buybtnPressed(_ sender: Any) {
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -46,6 +55,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         statePickerBtn.setTitle(states[row], for: UIControlState.normal) //for changing of button text
         statePicker.isHidden = true
+        countryLabel.isHidden = false
+        countryInput.isHidden = false
     }
 }
 
